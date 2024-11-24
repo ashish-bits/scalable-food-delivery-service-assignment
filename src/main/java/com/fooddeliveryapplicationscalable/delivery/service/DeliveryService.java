@@ -37,5 +37,12 @@ public class DeliveryService {
         return null;
     }
 
-      //update, delete, query delivery item
+    public DeliveryItem deleteDeliveryItem(UUID deliveryId) {
+        DeliveryItem deliveryItem = findById(deliveryId);
+        if(deliveryItem!= null) {
+            deliveryItemRepository.deleteById(deliveryId);
+            return deliveryItem;
+        }
+        return null;
+    }
 }

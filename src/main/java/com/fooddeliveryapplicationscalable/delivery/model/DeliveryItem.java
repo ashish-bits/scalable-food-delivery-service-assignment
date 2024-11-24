@@ -1,6 +1,7 @@
 package com.fooddeliveryapplicationscalable.delivery.model;
 
 import java.time.LocalDateTime;
+import java.util.UUID;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import org.springframework.data.annotation.Id;
@@ -9,11 +10,11 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @Document
 public class DeliveryItem {
     @Id
-    private String deliveryId;
+    private UUID deliveryId;
     @JsonProperty(value = "orderId")
-    private String orderId;
+    private UUID orderId;
     @JsonProperty(value = "deliveryPersonnelId")
-    private String deliveryPersonnelId;
+    private UUID deliveryPersonnelId;
     @JsonProperty(value = "deliveryStatus")
     private DeliveryStatus deliveryStatus;
     @JsonProperty(value = "estimatedDeliveryTime")
@@ -23,22 +24,22 @@ public class DeliveryItem {
     public void setDeliveryStatus(DeliveryStatus deliveryStatus) {
         this.deliveryStatus = deliveryStatus;
     }
-    public String getDeliveryId() {
+    public UUID getDeliveryId() {
         return deliveryId;
     }
-    public void setDeliveryId(String deliveryId) {
+    public void setDeliveryId(UUID deliveryId) {
         this.deliveryId = deliveryId;
     }
-    public String getOrderId() {
+    public UUID getOrderId() {
         return orderId;
     }
-    public void setOrderId(String orderId) {
+    public void setOrderId(UUID orderId) {
         this.orderId = orderId;
     }
-    public String getDeliveryPersonnelId() {
+    public UUID getDeliveryPersonnelId() {
         return deliveryPersonnelId;
     }
-    public void setDeliveryPersonnelId(String deliveryPersonnelId) {
+    public void setDeliveryPersonnelId(UUID deliveryPersonnelId) {
         this.deliveryPersonnelId = deliveryPersonnelId;
     }
     public DeliveryStatus getDeliveryStatus() {
